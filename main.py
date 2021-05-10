@@ -8,12 +8,15 @@ display = []
 for ch in chosen_word:
     display.append("_")
 
-guess = input("Guess a letter: ").lower()
+while "_" in display:
+    guess = input("Guess a letter: ").lower()
 
-i = 0
-for ch in chosen_word:
-    if ch == guess:
-        display[i] = guess
-    i += 1
+    i = 0
+    for ch in chosen_word:
+        if ch == guess:
+            display[i] = guess
+        i += 1
 
-print(display)
+    print(display)
+
+print("You win!")
