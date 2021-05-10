@@ -1,10 +1,19 @@
 import random
 word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
 
-chosen_word = word_list[random.randint(0, len(word_list) - 1)]
+print(f'Pssst, the solution is {chosen_word}.')
+
+display = []
+for ch in chosen_word:
+    display.append("_")
 
 guess = input("Guess a letter: ").lower()
 
+i = 0
 for ch in chosen_word:
     if ch == guess:
-        print("Yes the letter is in the word!")
+        display[i] = guess
+    i += 1
+
+print(display)
